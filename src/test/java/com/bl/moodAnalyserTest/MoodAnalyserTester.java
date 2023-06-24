@@ -17,4 +17,9 @@ public class MoodAnalyserTester {
         String actualResult = mood.analyseMood("I am in any mood");
         Assertions.assertEquals("Happy",actualResult);
     }
+    @Test
+    public void WhenGivenMessageIsNullThenHandleException(){
+        String actualResult = mood.analyseMood(" ");
+        Assertions.assertEquals("Happy",actualResult);
+    }
 }
