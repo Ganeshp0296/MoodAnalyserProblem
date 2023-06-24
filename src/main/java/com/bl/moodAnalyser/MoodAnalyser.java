@@ -1,9 +1,9 @@
 package com.bl.moodAnalyser;
 
 import java.util.Locale;
-
 public class MoodAnalyser {
-    public  static String analyseMood(String message) {
+
+    public  static String analyseMood(String message) throws MoodAnalysisException  {
         try {
             if (message.toLowerCase().contains("sad")) {
                 return "Sad";
@@ -11,7 +11,7 @@ public class MoodAnalyser {
             return "Happy";
         }
         catch (NullPointerException e){
-            return "Happy";
+            throw new MoodAnalysisException("Entered Invalid mood");
         }
     }
 }
